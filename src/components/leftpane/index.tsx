@@ -1,11 +1,14 @@
 import React from 'react'
+import Card from '../Card/Card'
 
-export default function index() {
+
+export default function LeftPane(props: any) {
+    const data = props.data
     return (
         <div>
-            <div>left 1</div>
-            <div>left 2</div>
-            <div> Left 3</div>
+            {
+                data.map((item: any) => <Card key={item.id} item={item} />)
+            }
         </div>
     )
 }

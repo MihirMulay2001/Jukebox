@@ -3,15 +3,18 @@ import axios from 'axios'
 
 
 const useFetcher = (url:string, access_token : string | string[]) => {
-    const uri = 'https://api.spotify.com/v1/playlists'
+    //const uri = 'https://api.spotify.com/v1/playlists'
     const [data, setData] = useState([])
     const [error, setError] = useState('')
     const [loading, setLoading] = useState(true)
     useEffect(() =>{
-        setLoading(true)
         const fetchData = async() => {
             try{
-                const response = await axios.get(url)
+                const response = await axios.get(url,{
+                    headers: {
+                        'Authorization' : `Bearer ${access_token}`
+                    }
+                })
                 setData(response.data)
             }catch(error){
                 setError('error occured')
@@ -19,7 +22,7 @@ const useFetcher = (url:string, access_token : string | string[]) => {
             setLoading(false)
         }
         fetchData()
-    },[url])
+    },[url, access_token])
     return {data, loading,error}
 }
 

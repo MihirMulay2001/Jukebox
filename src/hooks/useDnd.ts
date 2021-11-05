@@ -5,7 +5,7 @@ import { playlistType } from "types";
 
 const useDnd = () => {
     const [playlists, setPlaylists] = useState<playlistType[]>([])
-    const modifyPlaylist = (type :string, item : playlistType) => {
+    const modifyPlaylists = (type :string, item : playlistType) => {
         if(type === 'DELETE')
         {
             localStorage.removeItem(item.id)
@@ -22,12 +22,17 @@ const useDnd = () => {
     }
     useEffect(() => {
         let localPlaylist : playlistType[] = []
-        localStorage.forEach((element : any) => {
-            console.log(element);
-            localPlaylist.push(element)
-        })
+        let values : playlistType[] = []
+        let keys = Object.keys(localStorage)
+        let i = keys.length
+
+    while ( i-- ) {
+        console.log(localStorage.getItem(keys[i]));
+    }
+    setPlaylists(values)
+        
     }, [])
-    return {playlists, modifyPlaylist}
+    return {playlists, modifyPlaylists}
 }
 
 export default useDnd
