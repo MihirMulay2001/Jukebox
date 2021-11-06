@@ -5,31 +5,36 @@ import { playlistType } from "types";
 
 const useDnd = () => {
     const [playlists, setPlaylists] = useState<playlistType[]>([])
-    const modifyPlaylists = (type :string, item : playlistType) => {
+    const modifyPlaylists = (type :string, item : playlistType = {} as playlistType) => {
         if(type === 'DELETE')
         {
-            localStorage.removeItem(item.id)
             setPlaylists(prevState => {
-                const newState = prevState.filter( playlistItem => playlistItem.id !== item.id)
-                return newState
+                const localPlaylists = prevState
+                const newLocalPlaylists = localPlaylists.filter( (playlistItem :playlistType) => playlistItem.id !== item.id)
+                localStorage.setItem('localPlaylists',JSON.stringify(newLocalPlaylists) )
+                return [...localPlaylists]
             })
         }
         else if(type === "SET" )
         {
-            localStorage.setItem(item.id, JSON.stringify(item))
-            setPlaylists(prevState => [...prevState, item])
+            setPlaylists(prevState => {
+                const localPlaylists :playlistType[] =  [...prevState, item]
+                localStorage.setItem('localPlaylists', JSON.stringify(localPlaylists))
+                return [...localPlaylists]
+            })
+        }
+        else if (type==="DELETE_ALL")
+        {
+            localStorage.clear();
+            setPlaylists([])
         }
     }
     useEffect(() => {
-        let localPlaylist : playlistType[] = []
-        let values : playlistType[] = []
-        let keys = Object.keys(localStorage)
-        let i = keys.length
-
-    while ( i-- ) {
-        console.log(localStorage.getItem(keys[i]));
-    }
-    setPlaylists(values)
+        const localPlaylists = localStorage.getItem('localPlaylists')
+        const localPlaylistsJson = localPlaylists ?  JSON.parse(localPlaylists) : ''
+        if(localPlaylists)
+            setPlaylists(localPlaylistsJson)
+        console.log('jello');
         
     }, [])
     return {playlists, modifyPlaylists}

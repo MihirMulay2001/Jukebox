@@ -1,3 +1,4 @@
+
 export type playlistType = {
   "collaborative": boolean,
   "description": string,
@@ -12,46 +13,54 @@ export type playlistType = {
   "id": string,
   "images": [
     {
-      "url": "https://i.scdn.co/image/ab67616d00001e02ff9ca10b55ce82ae553c8228\n",
-      "height": 300,
-      "width": 300
+      "url": string,
+      "height": number,
+      "width": number
     }
   ],
-  "name": "string",
+  "name": string,
   "owner": {
-    "display_name": "string",
+    "display_name": string,
     "external_urls": {
-      "spotify": "string"
+      "spotify": string
     },
     "followers": {
-      "href": "string",
-      "total": 0
+      "href": string,
+      "total": number
     },
-    "href": "string",
-    "id": "string",
+    "href": string,
+    "id": string,
     "images": [
       {
-        "url": "https://i.scdn.co/image/ab67616d00001e02ff9ca10b55ce82ae553c8228\n",
-        "height": 300,
-        "width": 300
+        "url": string,
+        "height": number,
+        "width": number
       }
     ],
-    "type": "user",
-    "uri": "string"
+    "type": string,
+    "uri": string
   },
   "public": true,
-  "snapshot_id": "string",
+  "snapshot_id": string,
   "tracks": {
-    "href": "https://api.spotify.com/v1/me/shows?offset=0&limit=20\n",
+    "href": string,
     "items": [
       {}
     ],
-    "limit": 20,
-    "next": "https://api.spotify.com/v1/me/shows?offset=1&limit=1",
-    "offset": 0,
-    "previous": "https://api.spotify.com/v1/me/shows?offset=1&limit=1",
-    "total": 4
+    "limit": number,
+    "next": string,
+    "offset": number,
+    "previous": string,
+    "total": number
   },
-  "type": "string",
-  "uri": "string"
+  "type": string,
+  "uri": string
 }
+
+export type featuredPlaylist = {
+  playlists: {
+    href: string,
+    items: playlistType[]
+  }
+}
+

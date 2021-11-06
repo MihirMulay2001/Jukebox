@@ -1,5 +1,6 @@
 import React from 'react'
 import { useDrag } from 'react-dnd'
+import styles from '../../styles/Card.module.css'
 
 function Card(props: any) {
     const playlist = props.item
@@ -13,9 +14,18 @@ function Card(props: any) {
         })
     }))
     return (
-        <div ref={drag} style={{ border: isDragging ? "5px solid black" : "0px" }}>
-            {playlist.id}
-            {playlist.name}
+        <div className={styles.card} ref={drag} style={{ border: isDragging ? "5px solid black" : "0px" }}>
+            <div className={styles.img}>
+                <img
+                    src={playlist.images[0].url}
+                    alt="playlist cover"
+                    width="100%"
+                    height="100%"
+                />
+            </div>
+            <div className={styles.description}>
+                {playlist.description}
+            </div>
         </div>
     )
 }

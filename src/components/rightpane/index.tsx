@@ -1,9 +1,8 @@
 import Card from 'components/Card/Card'
-import React from 'react'
+import * as React from 'react'
 import useDnd from '../../hooks/useDnd'
 import { useDrop } from 'react-dnd'
-import { playlistType } from 'types'
-
+import styles from '../../styles/Pane.module.css'
 
 export default function RightPane() {
     const { playlists, modifyPlaylists } = useDnd()
@@ -11,18 +10,27 @@ export default function RightPane() {
         accept: 'playlist',
         drop: (item: any) => {
             modifyPlaylists("SET", item.playlist)
-
         },
         collect: (monitor) => ({
             isOver: !!monitor.isOver()
         })
     }))
+    const clearStorage = (event: any) => {
+        event.preventDefault();
+        modifyPlaylists("DELETE_ALL");
+    }
+
     return (
-        <div ref={drop} style={{ width: '100%', height: '100%' }}>
-            hello
-            {
-                playlists.map(playlist => <Card key={playlist.id} item={playlist} />)
-            }
+        <div ref={drop} className={styles.container}>
+            <div className={styles.heading}>
+                <h1>Saved playlists</h1>
+                <button className={styles.clearbtn} onClick={clearStorage}>Clear Lists</button>
+            </div>
+            <div className={styles.playlists}>
+                {
+                    playlists.map(playlist => <Card key={playlist.id} item={playlist} />)
+                }
+            </div>
         </div>
     )
 }

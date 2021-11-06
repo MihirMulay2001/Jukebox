@@ -1,6 +1,21 @@
 .container {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 50vw 50vw;
   width: 100%;
-  grid-template-rows: 1fr;
+  grid-template-rows: 100vh;
+  position: relative;
+}
+.leftpane {
+  background-color: #0e0e0e;
+  box-shadow: 0px 4px 9px 10px rgba(0, 0, 0, 0.25);
+  padding-top: 12vh;
+}
+.rightpane {
+  background-color: #2e2e2e;
+  padding-top: 12vh;
+}
+.spotifylogo {
+  position: absolute;
+  top: 3%;
+  left: 3%;
 }

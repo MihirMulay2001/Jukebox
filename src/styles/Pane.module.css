@@ -1,0 +1,29 @@
+.container {
+  padding-left: 3vw;
+  padding-right: 1vw;
+  height: 80%;
+}
+.playlists {
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
+  grid-row-gap: 30px;
+  overflow-y: scroll;
+  height: 100%;
+}
+.heading {
+  display: flex;
+}
+.heading h1 {
+  flex-grow: 1;
+}
+.clearbtn {
+  border: 1px solid #ee4a4a;
+  background-color: inherit;
+  color: #ee4a4a;
+  width: 100px;
+  height: 40px;
+  border-radius: 10px;
+}
+.clearbtn:hover {
+  cursor: pointer;
+}

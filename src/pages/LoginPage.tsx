@@ -1,5 +1,6 @@
 import React from 'react';
-
+import styles from '../styles/LoginPage.module.css'
+import SpotifyLogo from '../assets/Spotify_Logo.png'
 
 
 const client_id = process.env.REACT_APP_CLIENT_ID
@@ -14,11 +15,21 @@ url += '&state=jahsyyteoisjkhfd'
 
 function App() {
   return (
-    <div className="App">
-      hello
-      <a href={url}>
-        <div>Login to access data</div>
+    <div className={styles.container}>
+      <div className={styles.logo}>
+        <img src={SpotifyLogo} alt="spotify logo" width="140px" />
+      </div>
+      <div className={styles.heading}>
+        Jukebox
+      </div>
+      <div className={styles.subheading}>
+        Save trending playlists locally
+      </div>
+      <a href={url} className={styles.loginbtn}>
+        Login
       </a>
+      <div>Login to access playlists</div>
+
     </div>
   );
 }

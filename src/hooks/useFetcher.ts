@@ -1,10 +1,9 @@
 import {useState, useEffect} from 'react'
 import axios from 'axios'
-
+import { featuredPlaylist } from 'types'
 
 const useFetcher = (url:string, access_token : string | string[]) => {
-    //const uri = 'https://api.spotify.com/v1/playlists'
-    const [data, setData] = useState([])
+    const [data, setData] = useState<featuredPlaylist>({} as featuredPlaylist)
     const [error, setError] = useState('')
     const [loading, setLoading] = useState(true)
     useEffect(() =>{
