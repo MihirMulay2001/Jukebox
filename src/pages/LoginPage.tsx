@@ -1,13 +1,17 @@
-import React from 'react';
-import styles from '../styles/LoginPage.module.css'
-import SpotifyLogo from '../assets/Spotify_Logo.png'
-import { Link } from 'react-router-dom'
+import * as React from 'react';
+import { Link } from 'react-router-dom';
+import PlaylistImage1 from '../assets/playlist-image1.png';
+import PlaylistImage2 from '../assets/playlist-image2.png';
+import SpotifyLogo from '../assets/Spotify_Logo.png';
+import styles from '../styles/LoginPage.module.css';
 
 
 
 function App() {
   return (
     <div className={styles.container}>
+      <img className={styles.image1} width="800px" height="400px" src={PlaylistImage1} alt="playlist " />
+      <img className={styles.image2} width="800px" height="400px" src={PlaylistImage2} alt="playlist " />
       <div className={styles.logo}>
         <img src={SpotifyLogo} alt="spotify logo" width="140px" />
       </div>
@@ -25,5 +29,3 @@ function App() {
 }
 
 export default App;
-
-//https://accounts.spotify.com/authorize?response_type=token&client_id=5f2ed8b9afd149e196baace029ed072e&scope=user-read-private%20user-read-email&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Flandingpage&state=jahsyyteoisjkhfd

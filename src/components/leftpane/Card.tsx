@@ -1,4 +1,4 @@
-import React from 'react'
+import * as React from 'react'
 import { useDrag } from 'react-dnd'
 import styles from '../../styles/Card.module.css'
 
