@@ -9,15 +9,15 @@ const useDnd = () => {
         if(type === 'DELETE')
         {
             setPlaylists(prevState => {
-                const localPlaylists = prevState
-                const newLocalPlaylists = localPlaylists.filter( (playlistItem :playlistType) => playlistItem.id !== item.id)
+                const newLocalPlaylists = prevState.filter( (playlistItem :playlistType) => playlistItem.id !== item.id)
                 localStorage.setItem('localPlaylists',JSON.stringify(newLocalPlaylists) )
-                return [...localPlaylists]
+                return [...newLocalPlaylists]
             })
         }
         else if(type === "SET" )
         {
             setPlaylists(prevState => {
+                if(prevState.findIndex(prevlist => (prevlist.id === item.id)) !== -1) return [...prevState]
                 const localPlaylists :playlistType[] =  [...prevState, item]
                 localStorage.setItem('localPlaylists', JSON.stringify(localPlaylists))
                 return [...localPlaylists]
@@ -34,7 +34,6 @@ const useDnd = () => {
         const localPlaylistsJson = localPlaylists ?  JSON.parse(localPlaylists) : ''
         if(localPlaylists)
             setPlaylists(localPlaylistsJson)
-        console.log('jello');
         
     }, [])
     return {playlists, modifyPlaylists}

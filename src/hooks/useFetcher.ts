@@ -2,10 +2,11 @@ import {useState, useEffect} from 'react'
 import axios from 'axios'
 import { featuredPlaylist } from 'types'
 
-const useFetcher = (url:string, access_token : string | string[]) => {
+const useFetcher = (url:string) => {
     const [data, setData] = useState<featuredPlaylist>({} as featuredPlaylist)
     const [error, setError] = useState('')
     const [loading, setLoading] = useState(true)
+    const access_token = window.location.hash.substring(1).split("&")[0].split("=")[1]
     useEffect(() =>{
         const fetchData = async() => {
             try{

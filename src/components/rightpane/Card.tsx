@@ -5,7 +5,7 @@ import styles from '../../styles/Card.module.css'
 function Card(props: any) {
     const playlist = props.item
     const [{ isDragging }, drag] = useDrag(() => ({
-        type: 'featured-playlist',
+        type: 'saved-playlist',
         item: {
             playlist: playlist
         },

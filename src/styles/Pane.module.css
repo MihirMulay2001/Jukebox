@@ -17,13 +17,27 @@
   flex-grow: 1;
 }
 .clearbtn {
-  border: 1px solid #ee4a4a;
+  border: 2px solid #ee4a4a;
   background-color: inherit;
   color: #ee4a4a;
   width: 100px;
   height: 40px;
   border-radius: 10px;
+  font-size: 17px;
 }
 .clearbtn:hover {
   cursor: pointer;
+  transform: scale(1.1);
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 100%;
+}
+::-webkit-scrollbar-track {
+  background: #191414;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: #0b5826;
 }

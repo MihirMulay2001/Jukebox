@@ -14,7 +14,7 @@ function Card(props: any) {
         })
     }))
     return (
-        <div className={styles.card} ref={drag} style={{ border: isDragging ? "3px solid black" : "0px" }}>
+        <div className={styles.card} ref={drag} style={{ border: isDragging ? "5px solid black" : "0px" }}>
             <div className={styles.img}>
                 <img
                     src={playlist.images[0].url}

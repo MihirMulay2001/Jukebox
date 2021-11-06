@@ -1,16 +1,8 @@
 import React from 'react';
 import styles from '../styles/LoginPage.module.css'
 import SpotifyLogo from '../assets/Spotify_Logo.png'
+import { Link } from 'react-router-dom'
 
-
-const client_id = process.env.REACT_APP_CLIENT_ID
-
-let url = 'https://accounts.spotify.com/authorize'
-url += '?response_type=token'
-url += '&client_id=' + encodeURIComponent(client_id || '')
-url += '&scope=' + encodeURIComponent("user-read-private user-read-email")
-url += '&redirect_uri=' + encodeURIComponent("http://localhost:3000/landingpage")
-url += '&state=jahsyyteoisjkhfd'
 
 
 function App() {
@@ -25,11 +17,9 @@ function App() {
       <div className={styles.subheading}>
         Save trending playlists locally
       </div>
-      <a href={url} className={styles.loginbtn}>
-        Login
-      </a>
-      <div>Login to access playlists</div>
-
+      <Link to="/landingpage" className={styles.loginbtn}>
+        View Playlists
+      </Link>
     </div>
   );
 }

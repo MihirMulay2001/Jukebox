@@ -1,13 +1,13 @@
-import Card from 'components/Card/Card'
+import Card from './Card'
 import * as React from 'react'
-import useDnd from '../../hooks/useDnd'
 import { useDrop } from 'react-dnd'
 import styles from '../../styles/Pane.module.css'
 
-export default function RightPane() {
-    const { playlists, modifyPlaylists } = useDnd()
+export default function RightPane(props: any) {
+    const { playlists, modifyPlaylists } = props
+    //eslint-disable-next-line
     const [{ isOver }, drop] = useDrop(() => ({
-        accept: 'playlist',
+        accept: 'featured-playlist',
         drop: (item: any) => {
             modifyPlaylists("SET", item.playlist)
         },
@@ -28,7 +28,7 @@ export default function RightPane() {
             </div>
             <div className={styles.playlists}>
                 {
-                    playlists.map(playlist => <Card key={playlist.id} item={playlist} />)
+                    playlists.map((playlist: any) => <Card key={playlist.id} item={playlist} />)
                 }
             </div>
         </div>
