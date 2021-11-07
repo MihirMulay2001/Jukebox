@@ -8,6 +8,8 @@ const useFetcher = <Type>(url:string) => {
     const [error, setError] = useState('')
     const [loading, setLoading] = useState(true)
     const access_token = window.location.hash.substring(1).split("&")[0].split("=")[1]
+    console.log(window.location.hash);
+    
     useEffect(() =>{
         const fetchData = async() => {
             try{
