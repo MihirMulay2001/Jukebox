@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/Jukebox/static/css/main.917f9de1.chunk.css",
-    "main.js": "/Jukebox/static/js/main.884f449e.chunk.js",
-    "main.js.map": "/Jukebox/static/js/main.884f449e.chunk.js.map",
+    "main.js": "/Jukebox/static/js/main.387d52ea.chunk.js",
+    "main.js.map": "/Jukebox/static/js/main.387d52ea.chunk.js.map",
     "runtime-main.js": "/Jukebox/static/js/runtime-main.cb330cdb.js",
     "runtime-main.js.map": "/Jukebox/static/js/runtime-main.cb330cdb.js.map",
     "static/js/2.797e132f.chunk.js": "/Jukebox/static/js/2.797e132f.chunk.js",
@@ -18,6 +18,6 @@
     "static/js/runtime-main.cb330cdb.js",
     "static/js/2.797e132f.chunk.js",
     "static/css/main.917f9de1.chunk.css",
-    "static/js/main.884f449e.chunk.js"
+    "static/js/main.387d52ea.chunk.js"
   ]
 }
