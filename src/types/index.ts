@@ -64,3 +64,12 @@ export type featuredPlaylist = {
   }
 }
 
+export type personalPlaylist = {
+  "href": string
+  "items": playlistType[],
+  "limit": number,
+  "next": string,
+  "offset": number,
+  "previous": string,
+  "total": number
+}

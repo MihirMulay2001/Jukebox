@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { playlistType } from "types";
 
-
+// is responsible for all drag and drop functionality
 
 const useDnd = () => {
     const [playlists, setPlaylists] = useState<playlistType[]>([])

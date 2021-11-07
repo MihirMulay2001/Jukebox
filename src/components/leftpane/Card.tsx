@@ -15,17 +15,19 @@ function Card(props: any) {
     }))
     return (
         <div className={styles.card} ref={drag} style={{ border: isDragging ? "5px solid black" : "0px" }}>
-            <div className={styles.img}>
-                <img
-                    src={playlist.images[0].url}
-                    alt="playlist cover"
-                    width="100%"
-                    height="100%"
-                />
-            </div>
-            <div className={styles.description}>
-                {playlist.description}
-            </div>
+            <a href={playlist.external_urls.spotify} target="_blank" rel="noopener noreferrer">
+                <div className={styles.img}>
+                    <img
+                        src={playlist.images[0].url}
+                        alt="playlist cover"
+                        width="100%"
+                        height="100%"
+                    />
+                </div>
+                <div className={styles.description}>
+                    {playlist.description}
+                </div>
+            </a>
         </div>
     )
 }

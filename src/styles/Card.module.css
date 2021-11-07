@@ -6,7 +6,7 @@
   border-radius: 6px;
 }
 .card:hover {
-  cursor: grab;
+  cursor: pointer;
 }
 .img {
   margin-bottom: 10px;

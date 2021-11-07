@@ -10,8 +10,8 @@ import styles from '../styles/LoginPage.module.css';
 function App() {
   return (
     <div className={styles.container}>
-      <img className={styles.image1} width="800px" height="400px" src={PlaylistImage1} alt="playlist " />
-      <img className={styles.image2} width="800px" height="400px" src={PlaylistImage2} alt="playlist " />
+      <img className={styles.image1} src={PlaylistImage1} alt="playlist " />
+      <img className={styles.image2} src={PlaylistImage2} alt="playlist " />
       <div className={styles.logo}>
         <img src={SpotifyLogo} alt="spotify logo" width="140px" />
       </div>

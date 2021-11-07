@@ -1,9 +1,10 @@
 import * as React from 'react'
+import styles from '../../styles/Loading.module.css'
 
 function Loading() {
     return (
-        <div>
-            Loading
+        <div className={styles.container}>
+            <div className={styles.loader}> </div>
         </div>
     )
 }

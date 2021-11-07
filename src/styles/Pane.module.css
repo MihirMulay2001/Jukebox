@@ -3,6 +3,9 @@
   padding-right: 1vw;
   height: 80%;
 }
+.containerPre {
+  height: 100%;
+}
 .playlists {
   display: grid;
   grid-template-columns: 33% 33% 33%;
@@ -28,6 +31,15 @@
 .clearbtn:hover {
   cursor: pointer;
   transform: scale(1.1);
+}
+
+.selector {
+  background-color: #000;
+  color: white;
+  padding: 1vh;
+  font-size: 17px;
+  border-radius: 5px;
+  border-width: 3px;
 }
 
 ::-webkit-scrollbar {

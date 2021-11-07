@@ -28,7 +28,9 @@ export default function RightPane(props: any) {
             </div>
             <div className={styles.playlists}>
                 {
-                    playlists.map((playlist: any) => <Card key={playlist.id} item={playlist} />)
+                    playlists.length > 0
+                        ? playlists.map((playlist: any) => <Card key={playlist.id} item={playlist} />)
+                        : "No saved playlists"
                 }
             </div>
         </div>
