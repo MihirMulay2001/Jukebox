@@ -8,7 +8,7 @@ let url = 'https://accounts.spotify.com/authorize'
 url += '?response_type=token'
 url += '&client_id=' + encodeURIComponent(client_id || '')
 url += '&scope=' + encodeURIComponent("user-read-private user-read-email")
-url += '&redirect_uri=' + encodeURIComponent("http://localhost:3000/landingpage")
+url += '&redirect_uri=' + encodeURIComponent("https://mihirmulay2001.github.io/Jukebox/landingpage")
 url += '&state=jahsyyteoisjkhfd'
 
 
